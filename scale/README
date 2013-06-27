@@ -1,0 +1,5 @@
+This directory contains the condor_config.local files for one machine HTCondor
+master and one machine running an HTCondor schedd.
+
+The master will start with 30 collectors.  The sched machine will run with
+one schedd.

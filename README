@@ -1,0 +1,2 @@
+This package contains the condor_config.local files for the HTCondor pool
+for the local cluster and for the HTCondor pool used for scaling testing.

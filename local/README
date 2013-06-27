@@ -1,0 +1,2 @@
+This directory contains the condor_config.local files for a "local" HTCondor
+cluster master, and one execute node.

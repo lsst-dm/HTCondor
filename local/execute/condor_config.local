@@ -1,0 +1,85 @@
+##  What machine is your central manager?
+
+#CONDOR_HOST = $(FULL_HOSTNAME)
+CONDOR_HOST = lsst-launch.ncsa.illinois.edu
+
+## Pool's short description
+
+COLLECTOR_NAME = Condor at $(FULL_HOSTNAME)
+
+##  When is this machine willing to start a job? 
+
+START = TRUE
+
+
+##  When to suspend a job?
+
+SUSPEND = FALSE
+
+
+##  When to nicely stop a job?
+##  (as opposed to killing it instantaneously)
+
+PREEMPT = FALSE
+
+
+##  When to instantaneously kill a preempting job
+##  (e.g. if a job is in the pre-empting stage for too long)
+
+KILL = FALSE
+
+##  This macro determines what daemons the condor_master will start and keep its watchful eyes on.
+##  The list is a comma or space separated list of subsystem names
+
+#DAEMON_LIST = COLLECTOR, MASTER, NEGOTIATOR, SCHEDD, STARTD
+DAEMON_LIST = MASTER, STARTD, SCHEDD
+
+########
+# Additional parameters added by NCSA
+########
+CONDOR_ADMIN            = srp@ncsa.illinois.edu
+FILESYSTEM_DOMAIN = ncsa.illinois.edu
+# AUTH
+#SEC_CLIENT_AUTHENTICATION = OPTIONAL
+#SEC_CLIENT_AUTHENTICATION_METHODS = FS, FS_REMOTE
+#SEC_CLIENT_INTEGRITY = PREFERRED
+#
+#SEC_DEFAULT_AUTHENTICATION = PREFERRED
+#SEC_DEFAULT_AUTHENTICATION_METHODS = FS, FS_REMOTE
+#SEC_DEFAULT_INTEGRITY = PREFERRED
+
+#########
+## Password authenication
+#########
+#SEC_PASSWORD_FILE = $(TILDE)/pool_password
+#FS_REMOTE_DIR = /lsst/DC3/opt/condor/remote_dir
+#
+#SEC_ADMINISTRATOR_AUTHENTICATION = REQUIRED
+#SEC_CONFIG_AUTHENTICATION = REQUIRED
+#SEC_READ_AUTHENTICATION = OPTIONAL
+#
+########
+# Network filesystem parameters:
+########
+USE_NFS = False
+LOG_ON_NFS_IS_ERROR = FALSE
+DAGMAN_LOG_ON_NFS_IS_ERROR = FALSE
+
+##################
+UID_DOMAIN = ncsa.illinois.edu
+HOSTALLOW_WRITE = 206.76.*, 129.114.*, 198.202.*, *.ncsa.uiuc.edu, *.ncsa.illinois.edu
+HOSTALLOW_READ = 206.76.*, 129.114.*, 198.202.*, *.ncsa.uiuc.edu, *.ncsa.illinois.edu
+ALLOW_WRITE = 206.76.*, 129.114.*, 198.202.*, *.ncsa.uiuc.edu, *.ncsa.illinois.edu
+ALLOW_READ = 206.76.*, 129.114.*, 198.202.*, *.ncsa.uiuc.edu, *.ncsa.illinois.edu
+#lsst5,6,9,11,14
+#MAX_NUM_CPUS = 4
+#lsst5,6,9,11,14,15
+#MAX_NUM_CPUS = 2
+
+MAX_COLLECTOR_LOG = 100000000 
+MAX_NEGOTIATOR_LOG = 100000000 
+MAX_NEGOTIATOR_MATCH_LOG = 100000000 
+MAX_SCHEDD_LOG = 100000000 
+MAX_SHADOW_LOG = 100000000 
+MAX_MASTER_LOG = 100000000 
+
