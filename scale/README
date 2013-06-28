@@ -3,3 +3,6 @@ master and one machine running an HTCondor schedd.
 
 The master will start with 30 collectors.  The sched machine will run with
 one schedd.
+
+This is for version 7.8.2 of HTCondor
+http://research.cs.wisc.edu/htcondor/
